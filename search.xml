@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>network_foundation</title>
+      <link href="/2023/06/06/network-foundation/"/>
+      <url>/2023/06/06/network-foundation/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 网络基础 </tag>
+            
+            <tag> 报文 </tag>
+            
+            <tag> 协议 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>markdown语法熟悉，总结及测试</title>
       <link href="/2023/06/02/markdown_grammar/"/>
       <url>/2023/06/02/markdown_grammar/</url>
@@ -13,7 +42,7 @@
       
       <categories>
           
-          <category> 文档 </category>
+          <category> 笔记 </category>
           
       </categories>
       
