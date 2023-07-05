@@ -1,0 +1,505 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>C++学习笔记_第二章_第一节（未完成） | xiaoyiovo's blog</title><meta name="author" content="xiaoyiovo"><meta name="copyright" content="xiaoyiovo"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="C++的数据类型计算机处理的对象是数据，而数据是以某种特定的形式存在的（例如整数、浮点数、字符等形式）。数据结构指的是数据的组织形式，例如，数组就是一种数据结构。 C++可以使用的数据类型如下  基本类型  整形  短整型(short int)  整形(int)  长整型(long int)    字符型(char)  浮点型  单精度型(float)  双精度型(double)  长双精度型(l">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++学习笔记_第二章_第一节（未完成）">
+<meta property="og:url" content="http://xiaoyiovo.top/2023/06/11/Note-CPP-2-1/index.html">
+<meta property="og:site_name" content="xiaoyiovo&#39;s blog">
+<meta property="og:description" content="C++的数据类型计算机处理的对象是数据，而数据是以某种特定的形式存在的（例如整数、浮点数、字符等形式）。数据结构指的是数据的组织形式，例如，数组就是一种数据结构。 C++可以使用的数据类型如下  基本类型  整形  短整型(short int)  整形(int)  长整型(long int)    字符型(char)  浮点型  单精度型(float)  双精度型(double)  长双精度型(l">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://xiaoyiovo.top/img/010.jpg">
+<meta property="article:published_time" content="2023-06-11T12:48:19.000Z">
+<meta property="article:modified_time" content="2023-07-05T14:59:38.827Z">
+<meta property="article:author" content="xiaoyiovo">
+<meta property="article:tag" content="编程语言">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xiaoyiovo.top/img/010.jpg"><link rel="shortcut icon" href="/img/LOGO.png"><link rel="canonical" href="http://xiaoyiovo.top/2023/06/11/Note-CPP-2-1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'C++学习笔记_第二章_第一节（未完成）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-05 22:59:38'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js/themes/blue/pace-theme-minimal.min.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/IMG_0701.JPG" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('/img/010.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="xiaoyiovo's blog"><img class="site-icon" src="/img/LOGO.png"/><span class="site-name">xiaoyiovo's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C++学习笔记_第二章_第一节（未完成）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-11T12:48:19.000Z" title="发表于 2023-06-11 20:48:19">2023-06-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-05T14:59:38.827Z" title="更新于 2023-07-05 22:59:38">2023-07-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>7分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="C++学习笔记_第二章_第一节（未完成）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="C-的数据类型"><a href="#C-的数据类型" class="headerlink" title="C++的数据类型"></a>C++的数据类型</h1><p>计算机处理的对象是数据，而数据是以某种特定的形式存在的（例如整数、浮点数、字符等形式）。数据结构指的是数据的组织形式，例如，数组就是一种数据结构。</p>
+<p>C++可以使用的数据类型如下</p>
+<ul>
+<li><p>基本类型</p>
+<ul>
+<li><p>整形</p>
+<ul>
+<li><p>短整型(short int)</p>
+</li>
+<li><p>整形(int)</p>
+</li>
+<li><p>长整型(long int)</p>
+</li>
+</ul>
+</li>
+<li><p>字符型(char)</p>
+</li>
+<li><p>浮点型</p>
+<ul>
+<li><p>单精度型(float)</p>
+</li>
+<li><p>双精度型(double)</p>
+</li>
+<li><p>长双精度型(long doubel)</p>
+</li>
+</ul>
+</li>
+<li><p>布尔型(bool)</p>
+</li>
+</ul>
+</li>
+<li><p>派生类型</p>
+<ul>
+<li><p>指针类型(*)</p>
+</li>
+<li><p>枚举类型(enum)</p>
+</li>
+<li><p>数组类型([ ])</p>
+</li>
+<li><p>结构体类型(struct)</p>
+</li>
+<li><p>共用体类型(union)</p>
+</li>
+<li><p>类类型(class)</p>
+</li>
+</ul>
+</li>
+<li><p>空类型(void)</p>
+</li>
+</ul>
+<p>C++并没有统一规定各类数据的精度、数值范围和在内存中所占的字节数，各种C++编译系统根据自己的情况做出安排。下表列出了Visual C++数值型和字符型数据的情况。</p>
+<h2 id="数值型和字符型数据的字节数，和数值范围"><a href="#数值型和字符型数据的字节数，和数值范围" class="headerlink" title="数值型和字符型数据的字节数，和数值范围"></a>数值型和字符型数据的字节数，和数值范围</h2><table>
+<thead>
+<tr>
+<th align="left">类型</th>
+<th align="left">类型标识符</th>
+<th align="center">字节数</th>
+<th align="left">数值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">整形</td>
+<td align="left">[signed] int</td>
+<td align="center">4</td>
+<td align="left">-2147483648 ~ +2147483648</td>
+</tr>
+<tr>
+<td align="left">无符号整形</td>
+<td align="left">unsigned [int]</td>
+<td align="center">4</td>
+<td align="left">0 ~ 4294967295</td>
+</tr>
+<tr>
+<td align="left">短整形</td>
+<td align="left">short [int]</td>
+<td align="center">2</td>
+<td align="left">-32768 ~ +32767</td>
+</tr>
+<tr>
+<td align="left">无符号短整形</td>
+<td align="left">unsigned short [int]</td>
+<td align="center">2</td>
+<td align="left">0 ~ 65535</td>
+</tr>
+<tr>
+<td align="left">长整型</td>
+<td align="left">long [int]</td>
+<td align="center">4</td>
+<td align="left">-2147483648 ~ +2147483648</td>
+</tr>
+<tr>
+<td align="left">无符号长整形</td>
+<td align="left">unsigned long [int]</td>
+<td align="center">4</td>
+<td align="left">0 ~ 4294967295</td>
+</tr>
+<tr>
+<td align="left">字符型</td>
+<td align="left">[signed] char</td>
+<td align="center">1</td>
+<td align="left">-128 ~ +127</td>
+</tr>
+<tr>
+<td align="left">无符号字符型</td>
+<td align="left">unsigned char</td>
+<td align="center">1</td>
+<td align="left">0 ~ 255</td>
+</tr>
+<tr>
+<td align="left">单精度型</td>
+<td align="left">float</td>
+<td align="center">4</td>
+<td align="left">3.4 x 10^-38 ~ 3.4 x 10^38</td>
+</tr>
+<tr>
+<td align="left">双精度型</td>
+<td align="left">double</td>
+<td align="center">8</td>
+<td align="left">1.7 x 10^-308 ~ 1.7 x 10^308</td>
+</tr>
+<tr>
+<td align="left">长双精度型</td>
+<td align="left">long double</td>
+<td align="center">8</td>
+<td align="left">1.7 x 10^-308 ~ 1.7 x 10^308</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h1><h2 id="什么是常量"><a href="#什么是常量" class="headerlink" title="什么是常量"></a>什么是常量</h2><p>常量的值是不能改变的，一般从其字面形式即可判读其是否为常量。常量包括两大类：<strong>数值型常量</strong>（常数）和<strong>字符型常量</strong>。如70,0,-64为整形常量，6.8,-2.33为实型常量，包含在两个<code>&#39;</code>之间的数为字符常量，如’a’,’b’这种从字面形式即可识别的常量称为<strong>字面常量</strong>或<strong>直接常量</strong>。</p>
+<h2 id="数值常量"><a href="#数值常量" class="headerlink" title="数值常量"></a>数值常量</h2><p>数值常量就是通常所说的<strong>常数</strong>。在C++中，数值常量是区分类型的，从字面意思即可识别其类型。</p>
+<h3 id="整形常量（整数）的类型"><a href="#整形常量（整数）的类型" class="headerlink" title="整形常量（整数）的类型"></a>整形常量（整数）的类型</h3><p>一个常量怎样从字面上区分类型呢</p>
+<ol>
+<li><p>一个整数，若其值在-32768 ~ -32768范围内，那么则认为它是short int型，它可以赋值给short int型，int型和long int型。</p>
+</li>
+<li><p>一个整数，若其值在-2147483648 ~ +2147483648范围内，则认为它是long int型，它可以赋值给int型或long int型。</p>
+</li>
+<li><p>如果某一计算机系统的C++版本确定int与long int型数据在内存中占据的长度相同，则它们能够表示的数值范围相同。若如此，一个int型的常量也同时是一个long int型常量，可以赋值给int型或long int型变量。</p>
+</li>
+<li><p>常量无unsigned型。但是，一个非负值的整数可以赋值给unsigned型变量，只要它的范围不超过变量的取值范围即可。例如，将50000赋给一个unsigned short int 型变量是可以的，但是70000就不行，会溢出。</p>
+</li>
+</ol>
+<p>一个整形常量可以用三种不同的方法表示。</p>
+<ol>
+<li><p>十进制整数。如15674 , -564 , 0等，在一个整常量后面加一个l或L，则认定是long int型常量，例如156l,655L,0L等，这往往用于函数调用中。如果函数的形式参数为long int，则要求实际参数也为long int型，此时用123作实际参数就不行，要用123L才可以。</p>
+</li>
+<li><p>八进制整数。在常数的开头加上一个数字0，就表示这是一个八进制形式表示的常数，如020表示这是八进制数20，相当于十进制数16。</p>
+</li>
+<li><p>十六进制整数。在常数的开头加一个数字0和一个英文字母X或x，就表示这是一个十六进制表示的常数，如0x20表示这是一个十六进制数20，相当于十进制数32。</p>
+</li>
+</ol>
+<h3 id="浮点数的表示方法"><a href="#浮点数的表示方法" class="headerlink" title="浮点数的表示方法"></a>浮点数的表示方法</h3><p>一个浮点数可以用两种不同的方式表示。</p>
+<ol>
+<li><strong>十进制小数形式</strong>。如54.6 , -84.6等。它一般由整数部分和小数部分组成，可以省略其中之一，比如.23 , 54. , .0，但不能二者皆省略。C++编译系统把用这种形式的表示的浮点数一律按双精度常量处理，在内存中占8字节。如果在实数的数字之后加字母F或f，表示此数为长精度数(long double)。</li>
+<li><strong>指数形式</strong>（即浮点形式）。一个浮点数可以写成指数形式，如3.14159可以表示为0.314159 x 10^1 , 3.14159 x 10^0 , 31.4159 x 10 ^-1 , 134.159 x 10^-2等形式。在程序中表示为0.314159e1 , 3.14159e0 , 31.4159e -1 , 314.159e -2 , 用字母e表示其后的数是以10为底的幂，如e12表示10^2。</li>
+</ol>
+<p>其一般形式为</p>
+<p><strong>符号</strong> <strong>数字部分</strong> <strong>指数部分</strong></p>
+<p>上面各数据中的0.314159 ,3.14159,31.4159,134.159等就是其中的数字部分。可以看到，由于指数部分的存在，使得同一个浮点数可用不同的指数形式来表示，数字部分中小数点的位置是浮动的。例如当指数为1时，小数点的位置在数字3前面，指数为0时，小数点的位置在数字3后面。浮点数的名字就源于此。</p>
+<p>在程序中不论把浮点数写成小数形式还是指数形式，在内存中都是以指数形式（即浮点形式）存储的，例如无论在程序中写成134.159或是3.14159e0 , 0.314159e1等形式，在内存中都是以规范化的指数形式存放的，如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="center">数字部分</th>
+<th align="center">指数部分</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+</td>
+<td align="center">.314159</td>
+<td align="center">3</td>
+</tr>
+</tbody></table>
+<p>数字部分必须小于1，同时，小数点后面第一个数字必须是一个非零数字，例如不能是0.0314159。因此，134.159或是3.14159e0 , 0.314159e1在内存中都表示为0.314159 x 10^3。储存单元分为两部分，一部分用来存放数字部分，另一部分用来存放指数部分。为了便于理解，上表使用十进制来表示的，实际上在存储单元内使用二进制来表示小数部分，用2的幂次来表示指数部分的。</p>
+<p>对于以指数新式表示的数值常量，也都作为双精度常量处理。</p>
+<h2 id="字符常量"><a href="#字符常量" class="headerlink" title="字符常量"></a>字符常量</h2><h3 id="普通的字符常量"><a href="#普通的字符常量" class="headerlink" title="普通的字符常量"></a>普通的字符常量</h3><p>用<code>&#39;</code>括起来的一个字符就是字符常量。如’a’ , ‘#’ , ‘@’ , ‘W’这些都是合法的字符常量，在内存中占一个字节。注意：</p>
+<ol>
+<li><p>字符常量只包括一个字符，比如’SH’就是不合法的。</p>
+</li>
+<li><p>字符常量是区分大小写的，比如’C’ , ‘c’两个字符常量是不一样的。</p>
+</li>
+<li><p><code>&#39;</code>是定界符，被<code>&#39;</code>包裹的内容是字符常量，<code>&#39;</code>并不属于字符常量的一部分。比如：</p>
+</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; <span class="string">&#x27;c&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>输出的是一个字母“c”，并不是三个字符<code>&#39;c&#39;</code>。</p>
+<h3 id="转义字符常量"><a href="#转义字符常量" class="headerlink" title="转义字符常量"></a>转义字符常量</h3><p>除了上面那种字符常量以外，C++还允许用一种特殊的形式的字符常量，就是以<code>\</code>开头的一些字符，比如<code>\n</code>就代表一个换行符。<code>cout &lt;&lt; &#39;\n&#39;;</code>会输出一个换行，作用与<code>cout &lt;&lt; endl;</code>相同。这种字符在屏幕上是不显示的，它们只管执行自己相应的操作，并且在程序中也不能一般的字符表示，只能用这种<code>\</code>开头的特殊字符来表示。</p>
+<p>以下为常用的以<code>\</code>开头的特殊字符</p>
+<table>
+<thead>
+<tr>
+<th align="center">字符形式</th>
+<th align="center">含义</th>
+<th align="center">ASCII代码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">\a</td>
+<td align="center">响铃</td>
+<td align="center">7</td>
+</tr>
+<tr>
+<td align="center">\n</td>
+<td align="center">换行，将当前位置移到下一行开头</td>
+<td align="center">10</td>
+</tr>
+<tr>
+<td align="center">\t</td>
+<td align="center">水平制表（跳到下一个tab位置）</td>
+<td align="center">9</td>
+</tr>
+<tr>
+<td align="center">\b</td>
+<td align="center">退格，将当前位置移到前一列</td>
+<td align="center">8</td>
+</tr>
+<tr>
+<td align="center">\r</td>
+<td align="center">回车，将当前位置移到本行开头</td>
+<td align="center">13</td>
+</tr>
+<tr>
+<td align="center">\f</td>
+<td align="center">换页，将当前位置移到下一页开头</td>
+<td align="center">12</td>
+</tr>
+<tr>
+<td align="center">\v</td>
+<td align="center">竖向跳格</td>
+<td align="center">8</td>
+</tr>
+<tr>
+<td align="center">\\</td>
+<td align="center">反斜杠字符<code>\</code></td>
+<td align="center">92</td>
+</tr>
+<tr>
+<td align="center">&#39;</td>
+<td align="center">单引号<code>&#39;</code>字符</td>
+<td align="center">39</td>
+</tr>
+<tr>
+<td align="center">&quot;</td>
+<td align="center">双引号<code>”</code>字符</td>
+<td align="center">34</td>
+</tr>
+<tr>
+<td align="center">\0</td>
+<td align="center">空字符</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">\ddd</td>
+<td align="center">1~3为八进制数所代表的字符</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">\xhh</td>
+<td align="center">1~2位十进制数所代表的字符</td>
+<td align="center">无</td>
+</tr>
+</tbody></table>
+<p>上表中列出的字符称为“转义字符”，意思是将<code>\</code>后的字符转换成另外一种意义的字符。如<code>\n</code>中的<code>n</code>不是代表字母n而是作为”换行“符。</p>
+<p>上表中最后两行是用八进制数的ASCII码表示一个字符，</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://xiaoyiovo.top">xiaoyiovo</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://xiaoyiovo.top/2023/06/11/Note-CPP-2-1/">http://xiaoyiovo.top/2023/06/11/Note-CPP-2-1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://xiaoyiovo.top" target="_blank">xiaoyiovo's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><a class="post-meta__tags" href="/tags/C/">C++</a></div><div class="post_share"><div class="social-share" data-image="/img/010.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/06/18/Adworld-Crypto-1/" title="攻防世界Crypto1-4题学习笔记"><img class="cover" src="/img/012.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">攻防世界Crypto1-4题学习笔记</div></div></a></div><div class="next-post pull-right"><a href="/2023/06/08/Note-CPP-1/" title="C++学习笔记_第一章"><img class="cover" src="/img/img1.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">C++学习笔记_第一章</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/06/08/Note-CPP-1/" title="C++学习笔记_第一章"><img class="cover" src="/img/img1.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-08</div><div class="title">C++学习笔记_第一章</div></div></a></div><div><a href="/2023/07/05/Note-CPP-2-2/" title="C++学习笔记_第二章_第二节"><img class="cover" src="/img/011.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-05</div><div class="title">C++学习笔记_第二章_第二节</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/IMG_0701.JPG" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">xiaoyiovo</div><div class="author-info__description">we are never going down never giving up</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xiaoyiovo"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xiaoyiovo" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="/xiaoyiovo.official@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog,posted on 2023/05/31</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C-%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">C++的数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E5%9E%8B%E5%92%8C%E5%AD%97%E7%AC%A6%E5%9E%8B%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%97%E8%8A%82%E6%95%B0%EF%BC%8C%E5%92%8C%E6%95%B0%E5%80%BC%E8%8C%83%E5%9B%B4"><span class="toc-number">1.1.</span> <span class="toc-text">数值型和字符型数据的字节数，和数值范围</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-number">2.</span> <span class="toc-text">常量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%B8%B8%E9%87%8F"><span class="toc-number">2.1.</span> <span class="toc-text">什么是常量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E5%B8%B8%E9%87%8F"><span class="toc-number">2.2.</span> <span class="toc-text">数值常量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E5%BD%A2%E5%B8%B8%E9%87%8F%EF%BC%88%E6%95%B4%E6%95%B0%EF%BC%89%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.2.1.</span> <span class="toc-text">整形常量（整数）的类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95"><span class="toc-number">2.2.2.</span> <span class="toc-text">浮点数的表示方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E5%B8%B8%E9%87%8F"><span class="toc-number">2.3.</span> <span class="toc-text">字符常量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E7%9A%84%E5%AD%97%E7%AC%A6%E5%B8%B8%E9%87%8F"><span class="toc-number">2.3.1.</span> <span class="toc-text">普通的字符常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6%E5%B8%B8%E9%87%8F"><span class="toc-number">2.3.2.</span> <span class="toc-text">转义字符常量</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/07/05/Note-CPP-2-2/" title="C++学习笔记_第二章_第二节"><img src="/img/011.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++学习笔记_第二章_第二节"/></a><div class="content"><a class="title" href="/2023/07/05/Note-CPP-2-2/" title="C++学习笔记_第二章_第二节">C++学习笔记_第二章_第二节</a><time datetime="2023-07-05T04:38:20.000Z" title="发表于 2023-07-05 12:38:20">2023-07-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/18/Adworld-Crypto-1/" title="攻防世界Crypto1-4题学习笔记"><img src="/img/012.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="攻防世界Crypto1-4题学习笔记"/></a><div class="content"><a class="title" href="/2023/06/18/Adworld-Crypto-1/" title="攻防世界Crypto1-4题学习笔记">攻防世界Crypto1-4题学习笔记</a><time datetime="2023-06-18T11:30:19.000Z" title="发表于 2023-06-18 19:30:19">2023-06-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/11/Note-CPP-2-1/" title="C++学习笔记_第二章_第一节（未完成）"><img src="/img/010.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++学习笔记_第二章_第一节（未完成）"/></a><div class="content"><a class="title" href="/2023/06/11/Note-CPP-2-1/" title="C++学习笔记_第二章_第一节（未完成）">C++学习笔记_第二章_第一节（未完成）</a><time datetime="2023-06-11T12:48:19.000Z" title="发表于 2023-06-11 20:48:19">2023-06-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/08/Note-CPP-1/" title="C++学习笔记_第一章"><img src="/img/img1.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++学习笔记_第一章"/></a><div class="content"><a class="title" href="/2023/06/08/Note-CPP-1/" title="C++学习笔记_第一章">C++学习笔记_第一章</a><time datetime="2023-06-08T11:05:33.000Z" title="发表于 2023-06-08 19:05:33">2023-06-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/06/network-foundation/" title="计算机网络基础学习笔记（暂缓）"><img src="/img/CG005.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机网络基础学习笔记（暂缓）"/></a><div class="content"><a class="title" href="/2023/06/06/network-foundation/" title="计算机网络基础学习笔记（暂缓）">计算机网络基础学习笔记（暂缓）</a><time datetime="2023-06-06T13:07:49.000Z" title="发表于 2023-06-06 21:07:49">2023-06-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 By xiaoyiovo</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a href="xiaoyiovo.top">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async src="/js/diytitle.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

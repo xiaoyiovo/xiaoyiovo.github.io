@@ -1,0 +1,351 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>C++学习笔记_第二章_第二节 | xiaoyiovo's blog</title><meta name="author" content="xiaoyiovo"><meta name="copyright" content="xiaoyiovo"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="变量什么是变量变量就是在程序运行中值可以改变的量，每一个变量都应该有一个名字，称为变量名，并在内存中占据一定的存储单元，并在该存储单元中存放变量的值。变量名和变量值是两个不同的概念，变量名代表内存中的一个存储单元，在对程序进行编译连接时由系统为其分配地址，在程序中从变量中取值实际上是通过变量名找到相应的内存单元，并从中读取数据。 变量名命名规则首先让我们来了解以下标识符。和其他高级语言一样：用来标">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++学习笔记_第二章_第二节">
+<meta property="og:url" content="http://xiaoyiovo.top/2023/07/05/Note-CPP-2-2/index.html">
+<meta property="og:site_name" content="xiaoyiovo&#39;s blog">
+<meta property="og:description" content="变量什么是变量变量就是在程序运行中值可以改变的量，每一个变量都应该有一个名字，称为变量名，并在内存中占据一定的存储单元，并在该存储单元中存放变量的值。变量名和变量值是两个不同的概念，变量名代表内存中的一个存储单元，在对程序进行编译连接时由系统为其分配地址，在程序中从变量中取值实际上是通过变量名找到相应的内存单元，并从中读取数据。 变量名命名规则首先让我们来了解以下标识符。和其他高级语言一样：用来标">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://xiaoyiovo.top/img/011.jpg">
+<meta property="article:published_time" content="2023-07-05T04:38:20.000Z">
+<meta property="article:modified_time" content="2023-07-05T14:59:05.525Z">
+<meta property="article:author" content="xiaoyiovo">
+<meta property="article:tag" content="编程语言">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xiaoyiovo.top/img/011.jpg"><link rel="shortcut icon" href="/img/LOGO.png"><link rel="canonical" href="http://xiaoyiovo.top/2023/07/05/Note-CPP-2-2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'C++学习笔记_第二章_第二节',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-05 22:59:05'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js/themes/blue/pace-theme-minimal.min.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/IMG_0701.JPG" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('/img/011.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="xiaoyiovo's blog"><img class="site-icon" src="/img/LOGO.png"/><span class="site-name">xiaoyiovo's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C++学习笔记_第二章_第二节</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-07-05T04:38:20.000Z" title="发表于 2023-07-05 12:38:20">2023-07-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-05T14:59:05.525Z" title="更新于 2023-07-05 22:59:05">2023-07-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="C++学习笔记_第二章_第二节"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><h2 id="什么是变量"><a href="#什么是变量" class="headerlink" title="什么是变量"></a>什么是变量</h2><p>变量就是在程序运行中<strong>值</strong>可以改变的量，每一个变量都应该有一个名字，称为<strong>变量名</strong>，并在内存中占据一定的存储单元，并在该存储单元中存放变量的值。<strong>变量名</strong>和<strong>变量值</strong>是两个不同的概念，变量名代表内存中的一个存储单元，在对程序进行编译连接时由系统为其分配地址，在程序中从变量中取值实际上是通过变量名找到相应的内存单元，并从中读取数据。</p>
+<h2 id="变量名命名规则"><a href="#变量名命名规则" class="headerlink" title="变量名命名规则"></a>变量名命名规则</h2><p>首先让我们来了解以下标识符。和其他高级语言一样：<strong>用来标识变量、符号常量、函数、数组、类型等实体名字的有效字符序列称为标识符（identifier）。简单地说，标识符其实就是名字</strong>。变量名就是一种标识符，变量名必须遵循标识符的命名规则。</p>
+<p>C++规定标识符只能由字母、数字、和下划线<code>_</code>组成，且第一个字符必须是字母或者下划线。</p>
+<p>以下是一些合法的标识符，同时也是合法的变量名：</p>
+<p>You，HEY，_day，month，YeAr，xiao_min</p>
+<p>以下是一些不合法的标识符：</p>
+<p>Y.U.M，#123，$555，5E，C++，xiao-hua，ni hao</p>
+<p>注意，在C++中，大写字母和小写字母被认为是两个不同的字符。因此YOU和you是两个不一样的变量名。一般来说，变量名用小写字母来表示，以便辨认。<strong>注意，变量名不能与C++的关键字、系统函数名和类名相同</strong>。以下提供一些国外常用的变量命名格式：</p>
+<ul>
+<li><p>在变量名前怎加一个字母来表示这个变量的数据类型，如：cName，表示这个是一个字符类型的变量。iAge，表示这是一个整形变量。</p>
+</li>
+<li><p>用几个单词来组成一个变量名，用小写字母开头，后面的单词首字母用大写，如：userName，</p>
+</li>
+<li><p>用几个单词来组成一个变量名，每个单词之间用下划线<code>_</code>隔开，如：People’s_Republic of_China，talk_to_myself。</p>
+</li>
+</ul>
+<p>在变量命名时，你可以参考以上比较常用的命名方式，<strong>避免使用A，B，C这种简单变量名，这样会使程序的可读性大大降低，甚至程序编写者自己也搞不懂哪个变量是干什么的！</strong></p>
+<p>C++没有规定标识符的长度，但是各个具体的编译系统都有自己的规定，超过的字符不被识别，请在写程序之前了解所用系统的标识符长度规定。</p>
+<h2 id="声明变量和定义变量"><a href="#声明变量和定义变量" class="headerlink" title="声明变量和定义变量"></a>声明变量和定义变量</h2><p>在C++中，要求每一个变量都必须做声明或者定义，变量只有声明或定义之后才能使用。</p>
+<h3 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h3><p>声明变量是用来告诉编译器变量的名称和数据类型，并不为其分配内存</p>
+<p>声明变量的格式为：</p>
+<table>
+<thead>
+<tr>
+<th align="center">extern</th>
+<th align="center">变量的数据类型</th>
+<th align="center">变量名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">extern</td>
+<td align="center">int</td>
+<td align="center">joe</td>
+</tr>
+</tbody></table>
+<p>例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="type">int</span> joe;      <span class="comment">//声明变量joe</span></span><br></pre></td></tr></table></figure>
+
+<p>变量的声明有以下含义：</p>
+<ul>
+<li><p>告诉编译器此变量名已经被占用，不能作为其他变量的变量名。</p>
+</li>
+<li><p>告诉编译器，这个变量名已经匹配到一块内存上，下面用到的变量已经在别的文件中被定义，声明可以出现多次。</p>
+</li>
+</ul>
+<p>注意：即使使用了extern关键字，如果变量被赋值，则也是定义，如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="type">int</span> joe=<span class="number">654</span>;  <span class="comment">//定义变量joe</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="定义变量"><a href="#定义变量" class="headerlink" title="定义变量"></a>定义变量</h3><p>定义变量用于为变量分配存储空间，还可以为变量指定初始值，<strong>称为变量初始化</strong>，在一个程序中，变量只可以被定义一次。</p>
+<p>定义变量的格式为：</p>
+<table>
+<thead>
+<tr>
+<th align="center">变量的数据类型</th>
+<th align="center">变量名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">char</td>
+<td align="center">name</td>
+</tr>
+</tbody></table>
+<p>例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> name;                <span class="comment">//定义变量name</span></span><br><span class="line"><span class="type">char</span> name=<span class="string">&#x27;xiao_min&#x27;</span>;     <span class="comment">//定义变量并赋初始值</span></span><br></pre></td></tr></table></figure>
+
+<p>或是一次性定义多个变量，在每个变量名之间英文逗号<code>,</code>隔开。</p>
+<p>例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">float</span> num1,num2,num3; <span class="comment">//定义变量num1,num2,num3的数据类型为单精度浮点型</span></span><br></pre></td></tr></table></figure>
+
+<p>C要求变量定义应放在所有的执行语句之前，而C++放宽了限制，只要在第一次使用该变量之前进行定义就可以。</p>
+<p>例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> age;</span><br><span class="line">age = <span class="number">5</span>;</span><br><span class="line"><span class="type">float</span> result;</span><br><span class="line">result = <span class="number">90.56</span>;</span><br><span class="line"><span class="type">char</span> name;</span><br><span class="line">name = <span class="string">&#x27;chou&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>C++要求对变量做强制定义的目的是：</p>
+<ol>
+<li>没被定义的不作为变量名可以保证程序中变量名的使用正确，例如变量声明如下：</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> age;     <span class="comment">//定义变量age</span></span><br></pre></td></tr></table></figure>
+
+<p>而在执行语句中错写变量名，如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eedge = <span class="number">18</span>;  <span class="comment">//错写age为eedge;</span></span><br></pre></td></tr></table></figure>
+
+<p>在编译中会检查出eedge未被定义，报错为：“变量eedge未经声明”，便与用户发现错误，避免变量名使用错误。</p>
+<ol start="2">
+<li><p>每一个变量被指定为一个数据类型，在编译时就可以为其分配相应的存储单元。如指定age为int型，一般的编译系统对其分配四个字节，并按整数的方式存储数据。</p>
+</li>
+<li><p>指定每一变量属于一个特定的类型，便于在编译时根据此来检查该变量进行的运算是否合法。例如整形变量num1和num2，可以进行求余运算：<code>num1 % num2</code>,求余会得到num1&#x2F;num2的余数。如果num1和num2的数据类型为char，则不允许进行这类运算，在编译时会给出有关的错误信息。</p>
+</li>
+</ol>
+<h3 id="对变量赋初始值"><a href="#对变量赋初始值" class="headerlink" title="对变量赋初始值"></a>对变量赋初始值</h3><p>在定义变量时为其赋予一个初始值称为<strong>变量初始化</strong>。初始值可以是一个常量，也可以是一个有确定值的表达式。例如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">float</span> num1,num2 = <span class="number">156</span>*<span class="number">0.6</span>;     <span class="comment">//变量num2被初始化为93.6，变量num1未被初始化</span></span><br></pre></td></tr></table></figure>
+
+<p>如果未对变量赋初始值，则该变量的初始值是一个不可预测的值，即该存储单元中当时的内容是不可知的。</p>
+<p>初始化不是在编译阶段完成的，是在程序运行时执行本函数时才赋予初始值的，相当于执行一个赋值语句。例如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> num1 = <span class="number">156</span>;    <span class="comment">//定义变量num1为整形变量并赋予初始值156</span></span><br></pre></td></tr></table></figure>
+
+<p>相当于执行以下两个语句：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> num1;         <span class="comment">//定义变量num1为整形变量</span></span><br><span class="line">num1 = <span class="number">156</span>;       <span class="comment">//为变量num1赋值156</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="常变量"><a href="#常变量" class="headerlink" title="常变量"></a>常变量</h3><p>在定义变量时如果加上关键字<code>const</code>，则变量的值在程序运行期间不能被改变，这种变量称为常变量（constant variable）。例如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> num1 = <span class="number">2</span>;       <span class="comment">//用const关键字来声明此变量的值不能被改变，其值始终为2</span></span><br></pre></td></tr></table></figure>
+
+<p>定义常变量时必须同时对其初始化，此后其值不能在被改变，常变量不能出现在赋值号的左边。例如上面一句不可以被写成：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> num1;           <span class="comment">//并未对变量num1赋初始值，此语句不合法</span></span><br><span class="line">num = <span class="number">2</span>;                  <span class="comment">//常变量不可以被赋值</span></span><br></pre></td></tr></table></figure>
+
+<p>可以用表达式对常变量进行初始化，如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> num2=<span class="number">156</span>+<span class="number">65</span> ;   <span class="comment">//常变量num2的值被指定为221</span></span><br></pre></td></tr></table></figure>
+
+<p>对于常变量来说，<strong>就是在变量的基础上加了一个约束，使其值不可以被改变，因此常变量又称为只读变量（read-only-variable）。</strong></p>
+<p>请区别用#define指令顶定义的符号常量和用const定义的常变量。符号常量只是用一个符号代替一个字符串，在预编译时把所有符号常量替换为所指定的字符串，它没有数据类型，在内存中并不存在以符号常量命名的存储单元。而常变量有变量的特征，它具有数据类型，在内存中存在着以它命名的存储单元，可以用sizeof运算符测出其长度。于一般变量唯一的不同是指定变量的值不能改变。</p>
+<p>用#define指令定义符号常量是C中所采用的方法，C++把它保留了下来，但是C++程序员一般喜欢使用const定义常变量。虽然二者实现的方法不同，但是从<strong>使用</strong>的角度看，都可以认为用一个标识符代表一个常量。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://xiaoyiovo.top">xiaoyiovo</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://xiaoyiovo.top/2023/07/05/Note-CPP-2-2/">http://xiaoyiovo.top/2023/07/05/Note-CPP-2-2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://xiaoyiovo.top" target="_blank">xiaoyiovo's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><a class="post-meta__tags" href="/tags/C/">C++</a></div><div class="post_share"><div class="social-share" data-image="/img/011.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/06/18/Adworld-Crypto-1/" title="攻防世界Crypto1-4题学习笔记"><img class="cover" src="/img/012.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">攻防世界Crypto1-4题学习笔记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/06/08/Note-CPP-1/" title="C++学习笔记_第一章"><img class="cover" src="/img/img1.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-08</div><div class="title">C++学习笔记_第一章</div></div></a></div><div><a href="/2023/06/11/Note-CPP-2-1/" title="C++学习笔记_第二章_第一节（未完成）"><img class="cover" src="/img/010.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-11</div><div class="title">C++学习笔记_第二章_第一节（未完成）</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/IMG_0701.JPG" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">xiaoyiovo</div><div class="author-info__description">we are never going down never giving up</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xiaoyiovo"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xiaoyiovo" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="/xiaoyiovo.official@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog,posted on 2023/05/31</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">1.</span> <span class="toc-text">变量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8F%98%E9%87%8F"><span class="toc-number">1.1.</span> <span class="toc-text">什么是变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%90%8D%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="toc-number">1.2.</span> <span class="toc-text">变量名命名规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E5%8F%98%E9%87%8F%E5%92%8C%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F"><span class="toc-number">1.3.</span> <span class="toc-text">声明变量和定义变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E5%8F%98%E9%87%8F"><span class="toc-number">1.3.1.</span> <span class="toc-text">声明变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F"><span class="toc-number">1.3.2.</span> <span class="toc-text">定义变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E5%8F%98%E9%87%8F%E8%B5%8B%E5%88%9D%E5%A7%8B%E5%80%BC"><span class="toc-number">1.3.3.</span> <span class="toc-text">对变量赋初始值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E5%8F%98%E9%87%8F"><span class="toc-number">1.3.4.</span> <span class="toc-text">常变量</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/07/05/Note-CPP-2-2/" title="C++学习笔记_第二章_第二节"><img src="/img/011.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++学习笔记_第二章_第二节"/></a><div class="content"><a class="title" href="/2023/07/05/Note-CPP-2-2/" title="C++学习笔记_第二章_第二节">C++学习笔记_第二章_第二节</a><time datetime="2023-07-05T04:38:20.000Z" title="发表于 2023-07-05 12:38:20">2023-07-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/18/Adworld-Crypto-1/" title="攻防世界Crypto1-4题学习笔记"><img src="/img/012.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="攻防世界Crypto1-4题学习笔记"/></a><div class="content"><a class="title" href="/2023/06/18/Adworld-Crypto-1/" title="攻防世界Crypto1-4题学习笔记">攻防世界Crypto1-4题学习笔记</a><time datetime="2023-06-18T11:30:19.000Z" title="发表于 2023-06-18 19:30:19">2023-06-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/11/Note-CPP-2-1/" title="C++学习笔记_第二章_第一节（未完成）"><img src="/img/010.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++学习笔记_第二章_第一节（未完成）"/></a><div class="content"><a class="title" href="/2023/06/11/Note-CPP-2-1/" title="C++学习笔记_第二章_第一节（未完成）">C++学习笔记_第二章_第一节（未完成）</a><time datetime="2023-06-11T12:48:19.000Z" title="发表于 2023-06-11 20:48:19">2023-06-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/08/Note-CPP-1/" title="C++学习笔记_第一章"><img src="/img/img1.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++学习笔记_第一章"/></a><div class="content"><a class="title" href="/2023/06/08/Note-CPP-1/" title="C++学习笔记_第一章">C++学习笔记_第一章</a><time datetime="2023-06-08T11:05:33.000Z" title="发表于 2023-06-08 19:05:33">2023-06-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/06/network-foundation/" title="计算机网络基础学习笔记（暂缓）"><img src="/img/CG005.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机网络基础学习笔记（暂缓）"/></a><div class="content"><a class="title" href="/2023/06/06/network-foundation/" title="计算机网络基础学习笔记（暂缓）">计算机网络基础学习笔记（暂缓）</a><time datetime="2023-06-06T13:07:49.000Z" title="发表于 2023-06-06 21:07:49">2023-06-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 By xiaoyiovo</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a href="xiaoyiovo.top">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async src="/js/diytitle.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
