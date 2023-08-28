@@ -1,0 +1,352 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>C++学习笔记_第三章_第一节 | xiaoyiovo's blog</title><meta name="author" content="xiaoyiovo"><meta name="copyright" content="xiaoyiovo"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="C++的程序结构和C++语句在第1章中介绍了几个简单的C＋＋程序。第2章介绍了C＋＋程序中用到的一些基本要素（常量、变量、运算符和表达式等），它们是构成程序的基本成分。本章将接着介绍为编写简单的程序所必须掌握的一些内容。 从第1章已知，一个程序包含一个或多个程序单位（每个程序单位构成一个程序文件）。每一个程序单位由以下3个部分组成：  预处理指令。如＃include指令和＃define指令。  全">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++学习笔记_第三章_第一节">
+<meta property="og:url" content="https://xiaoyiovo.top/2023/08/16/Note-CPP-3-1/index.html">
+<meta property="og:site_name" content="xiaoyiovo&#39;s blog">
+<meta property="og:description" content="C++的程序结构和C++语句在第1章中介绍了几个简单的C＋＋程序。第2章介绍了C＋＋程序中用到的一些基本要素（常量、变量、运算符和表达式等），它们是构成程序的基本成分。本章将接着介绍为编写简单的程序所必须掌握的一些内容。 从第1章已知，一个程序包含一个或多个程序单位（每个程序单位构成一个程序文件）。每一个程序单位由以下3个部分组成：  预处理指令。如＃include指令和＃define指令。  全">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xiaoyiovo.top/img/016.jpg">
+<meta property="article:published_time" content="2023-08-16T09:41:21.000Z">
+<meta property="article:modified_time" content="2023-08-28T10:42:01.317Z">
+<meta property="article:author" content="xiaoyiovo">
+<meta property="article:tag" content="编程语言">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xiaoyiovo.top/img/016.jpg"><link rel="shortcut icon" href="/img/LOGO.png"><link rel="canonical" href="https://xiaoyiovo.top/2023/08/16/Note-CPP-3-1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'C++学习笔记_第三章_第一节',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-08-28 18:42:01'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js/themes/blue/pace-theme-minimal.min.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/IMG_0701.JPG" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('/img/016.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="xiaoyiovo's blog"><img class="site-icon" src="/img/LOGO.png"/><span class="site-name">xiaoyiovo's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C++学习笔记_第三章_第一节</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-08-16T09:41:21.000Z" title="发表于 2023-08-16 17:41:21">2023-08-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-08-28T10:42:01.317Z" title="更新于 2023-08-28 18:42:01">2023-08-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="C++学习笔记_第三章_第一节"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="C-的程序结构和C-语句"><a href="#C-的程序结构和C-语句" class="headerlink" title="C++的程序结构和C++语句"></a>C++的程序结构和C++语句</h1><p>在第1章中介绍了几个简单的C＋＋程序。第2章介绍了C＋＋程序中用到的一些基本要素（常量、变量、运算符和表达式等），它们是构成程序的基本成分。本章将接着介绍为编写简单的程序所必须掌握的一些内容。</p>
+<p>从第1章已知，一个程序包含一个或多个程序单位（每个程序单位构成一个程序文件）。每一个程序单位由以下3个部分组成：</p>
+<ol>
+<li><p>预处理指令。如＃include指令和＃define指令。</p>
+</li>
+<li><p>全局声明。在函数外对数据类型、函数以及变量的声明和定义。</p>
+</li>
+<li><p>函数。包括函数首部和函数体，在函数体中可以包含声明语句和执行语句。</p>
+</li>
+</ol>
+<p>下面是一个完整的C++程序：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span>    <span class="comment">//预处理指令</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;  <span class="comment">//在函数之外的全局声明</span></span><br><span class="line"><span class="type">int</span> a=<span class="number">3</span>;              <span class="comment">//在函数之外的全局声明</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span>            <span class="comment">//函数首部</span></span></span><br><span class="line"><span class="function"></span>&#123;                    </span><br><span class="line">    <span class="type">float</span> b;          <span class="comment">//函数内的声明</span></span><br><span class="line">    b=<span class="number">4.5</span>;            <span class="comment">//执行语句</span></span><br><span class="line">    cout&lt;&lt;a&lt;&lt;b;       <span class="comment">//执行语句</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;         <span class="comment">//执行语句</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>如果一个变量在函数之外进行声明，此变量是全局变量</strong>，它的有效范围是从该行开始到本程序单位结束。如果一个变量在函数内声明，此变量是局部变量，它的有效范围是从该行开始到本函数结束。C＋＋程序结构可以用下图表示：</p>
+<p><img src="/2023/08/16/Note-CPP-3-1/1.png" alt="C++程序结构"></p>
+<p>程序应该包括数据描述（由声明语句来实现）和数据操作（由执行语句来实现）。数据描述主要包括数据类型的声明、函数和变量的定义、变量的初始化等。数据操作的任务是对已提供的数据进行加工。</p>
+<p>C++程序中最小的独立单位是语句（statement）。它相当于一篇文章中的一个句子。句子是用句号结束的，而C++语句一般是用分号结束的（复合语句是以右花括号结束的）。</p>
+<p>C++语句可以分为以下4种。</p>
+<ol>
+<li><strong>声明语句</strong></li>
+</ol>
+<p>如</p>
+<blockquote>
+<p>int a,b;</p>
+</blockquote>
+<ol start="2">
+<li><strong>执行语句</strong></li>
+</ol>
+<p>通知计算机完成一定的操作。执行语句包括：</p>
+<ul>
+<li><strong>控制语句</strong>，完成一定的控制功能。C++有 9 种控制语句，它们是：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>语句</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>if ( ) ～ else ～</td>
+<td>条件选择语句</td>
+</tr>
+<tr>
+<td>for ( ) ～</td>
+<td>循环语句</td>
+</tr>
+<tr>
+<td>while ( ) ~</td>
+<td>循环语句</td>
+</tr>
+<tr>
+<td>do ~ while ( )</td>
+<td>循环语句</td>
+</tr>
+<tr>
+<td>continue</td>
+<td>结束本次循环语句</td>
+</tr>
+<tr>
+<td>break</td>
+<td>中止执行 switch 或循环语句</td>
+</tr>
+<tr>
+<td>switch</td>
+<td>多分支选择语句</td>
+</tr>
+<tr>
+<td>goto</td>
+<td>转向语句</td>
+</tr>
+<tr>
+<td>return</td>
+<td>从函数返回语句</td>
+</tr>
+</tbody></table>
+<p>上面9种语句中的括号 ( ) 表示其中包括一个判断条件，～表示内嵌的语句。例如，<code>if ( ) ～ else ～</code>的具体语句可以写成</p>
+<blockquote>
+<p>if(x&gt;0) cout &lt;&lt;x; else cout &lt;&lt;-x;    &#x2F;&#x2F;当 x&gt;0 成立时，输出 x 的值</p>
+</blockquote>
+<ul>
+<li><strong>函数和流对象调用语句</strong>。函数调用语句由一次函数调用加一个分号构成一个语句，例如</li>
+</ul>
+<blockquote>
+<p>sort(x,y,z);    &#x2F;&#x2F;假设已定义了sort函数，它有3个参数</p>
+<p>cout&lt;&lt;x&lt;&lt;endl;    &#x2F;&#x2F;流对象调用语句</p>
+</blockquote>
+<ul>
+<li><strong>表达式语句</strong> 。由一个表达式加一个分号构成一个语句。最典型的是：由赋值表达式构成一个赋值语句。</li>
+</ul>
+<blockquote>
+<p>i&#x3D;i+1    &#x2F;&#x2F;是一个赋值表达式，末尾没有分号</p>
+<p>i&#x3D;i+1;    &#x2F;&#x2F;是一个赋值语句，末尾有分号</p>
+</blockquote>
+<p><strong>任何一个表达式的最后加一个分号都可以成为一个语句。一个语句必须在最后出现 分号，分号是语句中不可缺少的一部分</strong>。<code>x＋y;</code>也是一个语句，作用是完成x + y的操 作，它是合法的，但是并不把x + y的和赋给另一变量，所以它并无实际意义。</p>
+<ol start="3">
+<li>空语句</li>
+</ol>
+<p>下面是一个空语句：</p>
+<blockquote>
+<p>;</p>
+</blockquote>
+<p>即只有一个分号的语句，它什么也不做。有时用来做被转向点，或循环语句中的循环体 （循环体是空语句，表示循环体什么也不做）。</p>
+<ol start="4">
+<li>复合语句</li>
+</ol>
+<p>可以用{ }把一些语句括起来成为复合语句。如下面是一个复合语句。 </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    z=x+y;</span><br><span class="line">    <span class="keyword">if</span>(z&gt;<span class="number">100</span>)z=z<span class="number">-100</span>;</span><br><span class="line">    cout&lt;&lt;z;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在本章中将介绍几种顺序执行的语句，在执行这些语句的过程中不会发生流程的控制转移。</p>
+<hr>
+<h1 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h1><p>以上，是笔者整理的自我认为本章内重要的内容，内容多数来自《C++程序设计（第三版）》中的第三章内容，希望可以帮助到正在阅读本片文章的你，最后，<strong>感谢你的阅读，祝你生活愉快，学习顺利</strong></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://xiaoyiovo.top">xiaoyiovo</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://xiaoyiovo.top/2023/08/16/Note-CPP-3-1/">https://xiaoyiovo.top/2023/08/16/Note-CPP-3-1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://xiaoyiovo.top" target="_blank">xiaoyiovo's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><a class="post-meta__tags" href="/tags/C/">C++</a></div><div class="post_share"><div class="social-share" data-image="/img/016.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/08/20/Note-CPP-3-2/" title="C++学习笔记_第三章_第二节"><img class="cover" src="/img/017.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">C++学习笔记_第三章_第二节</div></div></a></div><div class="next-post pull-right"><a href="/2023/08/10/Note-CPP-2-5/" title="C++学习笔记_第二章_第五节"><img class="cover" src="/img/015.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">C++学习笔记_第二章_第五节</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/06/11/Note-CPP-2-1/" title="C++学习笔记_第二章_第一节"><img class="cover" src="/img/010.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-11</div><div class="title">C++学习笔记_第二章_第一节</div></div></a></div><div><a href="/2023/07/15/Note-CPP-2-2/" title="C++学习笔记_第二章_第二节"><img class="cover" src="/img/011.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-15</div><div class="title">C++学习笔记_第二章_第二节</div></div></a></div><div><a href="/2023/08/05/Note-CPP-2-4/" title="C++学习笔记_第二章_第四节"><img class="cover" src="/img/014.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-05</div><div class="title">C++学习笔记_第二章_第四节</div></div></a></div><div><a href="/2023/06/08/Note-CPP-1/" title="C++学习笔记_第一章"><img class="cover" src="/img/img1.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-08</div><div class="title">C++学习笔记_第一章</div></div></a></div><div><a href="/2023/08/10/Note-CPP-2-5/" title="C++学习笔记_第二章_第五节"><img class="cover" src="/img/015.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-10</div><div class="title">C++学习笔记_第二章_第五节</div></div></a></div><div><a href="/2023/08/20/Note-CPP-3-2/" title="C++学习笔记_第三章_第二节"><img class="cover" src="/img/017.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-20</div><div class="title">C++学习笔记_第三章_第二节</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/IMG_0701.JPG" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">xiaoyiovo</div><div class="author-info__description">we are never going down never giving up</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xiaoyiovo"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xiaoyiovo" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="/xiaoyiovo.official@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog,posted on 2023/05/31</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C-%E7%9A%84%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E5%92%8CC-%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.</span> <span class="toc-text">C++的程序结构和C++语句</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="toc-number">2.</span> <span class="toc-text">结束语</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/08/20/Note-CPP-3-2/" title="C++学习笔记_第三章_第二节"><img src="/img/017.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++学习笔记_第三章_第二节"/></a><div class="content"><a class="title" href="/2023/08/20/Note-CPP-3-2/" title="C++学习笔记_第三章_第二节">C++学习笔记_第三章_第二节</a><time datetime="2023-08-20T10:11:56.000Z" title="发表于 2023-08-20 18:11:56">2023-08-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/08/16/Note-CPP-3-1/" title="C++学习笔记_第三章_第一节"><img src="/img/016.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++学习笔记_第三章_第一节"/></a><div class="content"><a class="title" href="/2023/08/16/Note-CPP-3-1/" title="C++学习笔记_第三章_第一节">C++学习笔记_第三章_第一节</a><time datetime="2023-08-16T09:41:21.000Z" title="发表于 2023-08-16 17:41:21">2023-08-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/08/10/Note-CPP-2-5/" title="C++学习笔记_第二章_第五节"><img src="/img/015.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++学习笔记_第二章_第五节"/></a><div class="content"><a class="title" href="/2023/08/10/Note-CPP-2-5/" title="C++学习笔记_第二章_第五节">C++学习笔记_第二章_第五节</a><time datetime="2023-08-10T09:29:14.000Z" title="发表于 2023-08-10 17:29:14">2023-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/08/05/Note-CPP-2-4/" title="C++学习笔记_第二章_第四节"><img src="/img/014.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++学习笔记_第二章_第四节"/></a><div class="content"><a class="title" href="/2023/08/05/Note-CPP-2-4/" title="C++学习笔记_第二章_第四节">C++学习笔记_第二章_第四节</a><time datetime="2023-08-05T08:52:11.000Z" title="发表于 2023-08-05 16:52:11">2023-08-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/21/Note-CPP-2-3/" title="C++学习笔记_第二章_第三节"><img src="/img/013.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++学习笔记_第二章_第三节"/></a><div class="content"><a class="title" href="/2023/07/21/Note-CPP-2-3/" title="C++学习笔记_第二章_第三节">C++学习笔记_第二章_第三节</a><time datetime="2023-07-20T16:16:00.000Z" title="发表于 2023-07-21 00:16:00">2023-07-21</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 By xiaoyiovo</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a href="xiaoyiovo.top">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async src="/js/diytitle.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
