@@ -157,7 +157,7 @@ const rotatingImgs = [
 ];
 
 /* ----------- 终局素材（不参与轮换） ----------- */
-const finalImg = "img/angry.png";     // ← 终局图片路径
+const finalImg = "img/angry.png";
 
 /* ----------- 元件引用 ----------- */
 const mainImg  = document.getElementById("main-img");
@@ -222,7 +222,7 @@ noBtn.onclick  = () => {
 
   /* --- 3. 轮换图片 & 文字 --- */
   const textIdx = clickCnt % rotatingTexts.length;
-  const imgIdx  = clickCnt % rotatingImgs.length; // 顺序轮换，如需随机请改 Math.random()
+  const imgIdx  = clickCnt % rotatingImgs.length; // 顺序轮换，随机改 Math.random()
 
   question.innerText = rotatingTexts[textIdx];
   mainImg.src        = rotatingImgs[imgIdx];
