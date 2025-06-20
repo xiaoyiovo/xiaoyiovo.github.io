@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<title>和我永远在一起！</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #fff6f8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #main-img {
+    width: 40vw;
+    max-width: 200px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 4vh;
+    transition: 0.2s;
+  }
+
+  h1 {
+    margin: 0 0 20px;
+    font-size: clamp(20px, 5vw, 36px);
+    max-width: 90vw;
+    color: #ff4f8f;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  #buttons {
+    display: flex;
+    gap: 4vw;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: all 0.5s ease;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: width 0.6s, height 0.6s, font-size 0.6s, opacity 0.6s;
+    padding: 1vh 4vw;
+    font-size: clamp(14px, 4vw, 20px);
+  }
+
+  #yes {
+    background: #ff6fa2;
+    color: #fff;
+  }
+
+  #no {
+    background: #e0e0e0;
+    color: #333;
+  }
+
+  /* ---------- 响应式优化 ---------- */
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 6vw;
+    }
+
+    #main-img {
+      width: 60vw;
+    }
+
+    button {
+      font-size: 4vw;
+      min-width: 30vw;
+    }
+  }
+
+  /* ---------- 平滑终局动画 ---------- */
+  /* 平滑隐藏按钮 */
+  button.fading-out {
+    opacity: 0;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 0 !important;
+    border: none;
+    transition: all 0.6s ease;
+  }
+
+/* 居中按钮时移除间隙 */
+  #buttons.centered {
+    justify-content: center;
+    gap: 0;
+    transition: all 0.6s ease;
+  }
+
+</style>
+</head>
+<body>
+
+  <img id="main-img" src="img/default.png" alt="cute">
+  <h1 id="question">悦悦可以永远和我在一起吗？</h1>
+
+  <div id="buttons">
+    <button id="yes">可以</button>
+    <button id="no">不可以</button>
+  </div>
+
+<script>
+/* ----------- 轮换素材 ----------- */
+const rotatingTexts = [
+  "再考虑一下嘛~",
+  "别拒绝我啦，我会伤心的 >_<",
+  "真的不行吗？QAQ",
+  "好啦好啦，我等你回心转意~",
+  "点再多也逃不掉哟♪",
+  "你点的不是真心话对吧？🥺",
+  "再点一次就是答应啦！",
+  "你舍得吗？呜呜呜~",
+  "小心我哭给你看TAT",
+  "我是认真的，不许拒绝我 >_<",
+  "你点不可以的样子，好坏好坏",
+  "哪有人这样欺负喜欢你的人嘛！",
+  "你忍心让我失望吗…",
+  "别闹啦，快说可以~",
+  "你就是想一直点是不是！",
+  "嘴上说不可以，心里全是我对吧？",
+  "别嘴硬啦~",
+  "盯着我的眼睛再说一次不可以？不敢吧~",
+  "偷偷告诉你，再点一次就生气了哦~",
+  "不答应我，我就不走了！",
+  "我都准备好一起老了你还在犹豫！",
+  "你忍心让一颗真心碎掉吗？",
+  "再不说可以我就赖上你了！",
+  "反正我会一直等你说可以的😤",
+  "今天说不可以，明天我还来！",
+  "点再多次我也不会走的~",
+  "再给你一次机会，说可以吧！",
+  "不许再说不可以了，小笨蛋~",
+  "快说喜欢我，不然我生闷气啦！",
+  "你以为你有拒绝的权利吗！",
+];
+const rotatingImgs = [
+  "img/wronged.png",
+  "img/beg.png",
+  "img/no.png",
+  "img/really.png",
+  "img/sad.png",
+  "img/shock.png",
+];
+
+/* ----------- 终局素材（不参与轮换） ----------- */
+const finalImg = "img/angry.png";     // ← 终局图片路径
+
+/* ----------- 元件引用 ----------- */
+const mainImg  = document.getElementById("main-img");
+const yesBtn   = document.getElementById("yes");
+const noBtn    = document.getElementById("no");
+const question = document.getElementById("question");
+const buttons  = document.getElementById("buttons");
+
+/* ----------- 初始统一尺寸 ----------- */
+const orig = { w:150, h:54, font:20 };
+[yesBtn, noBtn].forEach(b=>{
+  b.style.width    = orig.w + "px";
+  b.style.height   = orig.h + "px";
+  b.style.fontSize = orig.font + "px";
+  b.style.padding  = "0 28px";
+});
+
+/* ----------- 状态变量 ----------- */
+let yesScale   = 1;   // “可以”放大倍数
+let noScale    = 1;   // “不可以”缩小倍数
+let shrinkCnt  = 0;   // 已缩小次数
+const MAX_SHRINK = 4;
+
+let clickCnt   = 0;   // 点击次数
+const MAX_CLICK = 30; // 第 30 次触发终局
+
+/* ----------- 事件绑定 ----------- */
+yesBtn.onclick = () => location.href = "yes.html";
+
+noBtn.onclick  = () => {
+  clickCnt++;
+
+  /* --- 终局：第 30 次点击 --- */
+  if (clickCnt >= MAX_CLICK) {
+    // 按钮淡出 + 容器过渡居中
+    noBtn.classList.add("fading-out");
+    buttons.classList.add("centered");
+    question.innerText = "不听话喔，答不答应可不是悦悦说了算的！";
+    mainImg.src = finalImg;
+
+    // 渐隐完成后彻底移除按钮，防止占位
+    setTimeout(() => {
+      noBtn.remove();
+    }, 700); // 与 CSS transition 时间保持一致
+    return;                                // 停止后续放缩/轮换
+  }
+
+  /* --- 1. “可以”按钮放大 --- */
+  yesScale += 0.3;
+  yesBtn.style.width    = (orig.w * yesScale) + "px";
+  yesBtn.style.height   = (orig.h * yesScale) + "px";
+  yesBtn.style.fontSize = (orig.font * yesScale) + "px";
+
+  /* --- 2. “不可以”按钮最多缩小 4 次 --- */
+  if (shrinkCnt < MAX_SHRINK) {
+    noScale *= 0.9;
+    noBtn.style.width    = (orig.w * noScale) + "px";
+    noBtn.style.height   = (orig.h * noScale) + "px";
+    noBtn.style.fontSize = (orig.font * noScale) + "px";
+    shrinkCnt++;
+  }
+
+  /* --- 3. 轮换图片 & 文字 --- */
+  const textIdx = clickCnt % rotatingTexts.length;
+  const imgIdx  = clickCnt % rotatingImgs.length; // 顺序轮换，如需随机请改 Math.random()
+
+  question.innerText = rotatingTexts[textIdx];
+  mainImg.src        = rotatingImgs[imgIdx];
+};
+</script>
+</body>
+</html>
